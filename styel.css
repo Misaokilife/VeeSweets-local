@@ -9,25 +9,24 @@ html, *{
     font-family: "YuMincho", "Yu Mincho", serif;
 }
 
-.logo {
+.container {
     display: flex;
     align-items: center;
-}
-
-.logo img{
-    height: 100px;
-    width: 100px;
-    object-fit: contain;
-}
-
-.logo .text-content {
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    padding: 20px;
 }
 
-.logo p, .logo h1 {
-    margin: 0;
+.logo-box {
+    flex: 0 0 auto; /* ロゴのサイズを固定 */
+}
+
+.text-box {
+    display: flex;
+    flex-direction: column; /* 縦に要素を並べる */
+    justify-content: center; /* 中央揃え */
+}
+
+.text-box h1, .text-box p {
+    margin: 5px 0; /* 余白の調整 */
 }
 
