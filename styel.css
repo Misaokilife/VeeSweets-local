@@ -6,60 +6,64 @@ html, *{
     box-sizing: border-box;
     font-size:16px;
     line-height: 1.6;
-    font-family: "YuMincho", "Yu Mincho", serif;
-    color: gray;
+    font-family: "Noto Serif JP", serif;
+    color: #707070;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* <header>開始 */
 
 header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    height: 843px;
+}
+
+.site-icon{
+    width: 40%;
+    height: 113.38px;
+    position: relative;
+    margin-top: 63.26px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.site-icon img {
+    position: absolute;
     width: 100%;
-    height: 900px;
-    padding: 10px;
-}
-
-.container {
-    width: 600px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.logo-box {
-    flex: 0 0 auto; /* ロゴのサイズを固定 */
-}
-
-.logo-box img {
-    width: 100px;
-    height: 100px;
-}
-
-.text-box {
-    display: flex;
-    flex-direction: column; /* 縦に要素を並べる */
-    justify-content: center; /* 中央揃え */
-    margin-left: 20px;
-}
-
-.text-box h1 {
-    font-size: 40px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .main-visual {
-    display: flex;
-    width: 1000px;
-    height: 700px;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
+    width: 100vw;
+    max-width: 1500px;
+    height: calc(100vw * (843 / 1500));
+    max-height: 843px;
+    position: absolute;
+    top: 176.64px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10; /* 必要に応じてz-indexを指定 */
+}
+
+.main-visual img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* ＜main＞開始 */
+
+main {
+    margin-top: 843px;
+}
 
 .article {
     display: flex; 
@@ -124,4 +128,48 @@ footer p {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 375px) {
+    header {
+        position: relative;
+        min-height: 250px; /* モバイルビューでの最小高さ */
+        text-align: center;
+    }
+
+    .site-icon {
+        width: 70%; /* 幅を画面サイズの70%に設定 */
+        height: auto; /* 高さは自動で調整 */
+        position: relative;
+        margin-top: 20px; /* モバイルビューでの上部の余白 */
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;
+    }
+
+    .site-icon img {
+        position: absolute;
+        width: 100%; /* 親要素の幅に合わせる */
+        height: auto; /* 高さは縦横比を保って自動で調整 */
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        max-height: 60px; /* 画像の最大高さを制限 */
+    }
+
+    .main-visual {
+        width: 100%; /* 幅を画面サイズの100%に設定 */
+        height: auto; /* 高さは縦横比を保って自動で調整 */
+        position: relative;
+        top: 0; /* モバイルビューでは上部に配置 */
+        left: 0;
+        transform: none;
+        overflow: hidden;
+    }
+
+    .main-visual img {
+        width: 100%; /* 幅は親要素に合わせる */
+        height: auto; /* 高さは縦横比を保って自動で調整 */
+        max-height: 300px; /* 画像の最大高さを制限 */
+    }
 }
