@@ -6,7 +6,8 @@ html, *{
     box-sizing: border-box;
     font-size:16px;
     line-height: 1.6;
-    font-family: "Noto Serif JP", serif;
+    font-family: "Noto Serif JP",  serif;
+    font-weight: 300;
     color: #707070;
 }
 
@@ -19,7 +20,8 @@ img {
 
 header {
     position: relative;
-    height: 843px;
+    height: 1080px;
+    top: 0;
 }
 
 .site-icon{
@@ -61,44 +63,65 @@ header {
 
 /* ＜main＞開始 */
 
-main {
-    margin-top: 843px;
-}
-
 .article {
     display: flex; 
     flex-direction: column;
     align-items: center; 
     width: 100%;
+    height: auto;
     position: relative;
 }
 
 .content-wrapper {
-    width: auto;
-    max-width: auto;
+    width: 80%;
+    max-width: 1500px;
     text-align: left;
     margin: 0 auto;
-    padding: 20px;
 }
 
 .content-wrapper h2 {
-    font-size: 24px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    width: 80%;
+    max-width: 1500px;
+    font-size: 35px;
+    letter-spacing: 0.2em;
+    line-height: 1.45;
+    margin-left: auto;
 }
 
 .content-wrapper p {
-    border-top: 1px solid #ccc;
-    padding: 20px;
+    width: 94%;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+    margin-bottom: 124px;
+    letter-spacing: 0.2em;
+    line-height: 45px;
 }
 
-.content-wrapper h2 .content-wrapper p {
-    text-align: left;
-    width: auto;
-    margin: 0;
-    padding: 20px;
+.custom-divider {
+    position: relative;
+    border: none;
+    width: 1500px;
+    height: 37px;
+    background-image: url('img/divider-line.png');
+    background-repeat: repeat-x;
+    background-size: contain;
+    margin-top: 53px;
+    margin-bottom: 124px;
+}
+
+.custom-divider::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 41px;
+    height: 37px;
+    background-image: url('img/endof_divider.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .button-container {
@@ -130,14 +153,14 @@ footer p {
     margin-bottom: 20px;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 430px) {
     header {
         height: auto;
     }
 
     .site-icon {
         width: 80%;
-        height: 45px;
+        height: 50px;
         margin-top: 20px;
         margin-left: auto;
         margin-right: auto;
