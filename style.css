@@ -272,6 +272,8 @@ footer p {
     bottom: 40px;
 }
 
+/* スマホ用レスポンシブ */
+
 @media (max-width: 430px) {
     header {
         height: auto;
@@ -309,6 +311,103 @@ footer p {
     .main-visual img {
         width: 100%;
         height: auto;
+    }
+
+    .article {
+        flex-direction: column;
+    }
+
+    .content-wrapper {
+        max-width: 430px;
+        width: 90%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .content-wrapper h2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+        width: 98%;
+        margin-top: 10px;
+    }
+
+    .content-wrapper h2 br {
+        display: none;
+    }
+
+    .content-wrapper p {
+        font-size: 16px;
+        margin-bottom: 20px;
+        line-height: unset;
+        max-width: 430px;
+        width: 98%;
+        letter-spacing: unset;
+    }
+
+    .no-linebreak {
+        display: none;
+    }
+
+    .custom-divider {
+        height: 20px;
+        margin-bottom: 20px;
+    }
+
+    .custom-divider::after {
+        width: 25px;
+        height: 20px;
+    }
+
+    .button-container {
+        max-width: 250px;
+    }
+
+    .narrow-btn {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+
+    .narrow-btn::before {
+        width: 250px;
+    }
+
+    .image-container {
+        margin-bottom: 20px;
+    }
+
+    .responsive-image {
+        margin: auto;
+    }
+
+    .contact {
+        padding: 20px;
+    }
+
+    .contact-text {
+        font-size: 20px;
+        margin-bottom: 20px;
+        letter-spacing: unset;
+    }
+
+    .contact-btn {
+        width: 300px;
+        height: 60px;
+        font-size: 18px;
+    }
+
+    .contact-mail {
+        font-size: 18px;
+    }
+
+    .contact-person {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 431px) {
+    br.responsive-break {
+        display: none;
     }
 }
 
