@@ -73,10 +73,14 @@ header {
 }
 
 .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     width: 80%;
     max-width: 1500px;
     text-align: left;
     margin: 0 auto;
+    position: relative;
 }
 
 .content-wrapper h2 {
@@ -86,10 +90,15 @@ header {
     letter-spacing: 0.2em;
     line-height: 1.45;
     margin-left: auto;
+    margin-bottom: 53px;
+}
+
+.caption-title2 {
+    margin-bottom: 112px;
 }
 
 .content-wrapper p {
-    width: 94%;
+    width: 98%;
     max-width: 1500px;
     margin-left: auto;
     margin-right: auto;
@@ -102,12 +111,12 @@ header {
 .custom-divider {
     position: relative;
     border: none;
-    width: 1500px;
+    width: 100%;
+    max-width: 1500px;
     height: 37px;
     background-image: url('img/divider-line.png');
     background-repeat: repeat-x;
     background-size: contain;
-    margin-top: 53px;
     margin-bottom: 124px;
 }
 
@@ -125,13 +134,74 @@ header {
 }
 
 .button-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    margin-top: 20px;
+    margin-bottom: 71px;
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.narrow-btn {
+    position: relative;    /*矢印と下線の基点とするためrelativeを指定*/
+    display: block;     /*形状*/
+    padding: 0 20px;
+    color: #707070;
+    text-decoration: none;
+    outline: none;
+    font-size: 21px;
+    line-height: 30px;
+}
+
+.narrow-btn::before {    /*矢印と下線の形状*/
+    content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -8px;
     right: 0;
+    width: 300px;      /*下線の形状*/    
+    height: 0.2px;
+    background: #707070;
+}
+
+.narrow-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    width: 15px;         /*矢印の形状*/    
+    height: 0.2px;
+    background: #707070;
+    transform: rotate(35deg);
+}
+
+.narrow-btn:hover {
+    color: #a87255;
+    transition: all 0.3s ease;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.narrow-btn:hover::before {
+    background: #a87255;
+    height: 2px;
+}
+
+.barrow-btn:hover::after {
+    background: #a87255;
+    height: 2px;
+}
+
+.image-container {
+    width: 100%;
+    max-width: 1500px;
+    margin-bottom: 194px;
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+    max-width: 1500px;
+    margin: auto;
 }
 
 .contact {
@@ -142,15 +212,64 @@ header {
     padding: 10px;
 }
 
-.contact-items {
-    margin: 5px;
+.contact-text {
+    font-size: 35px;
+    margin-bottom: 142px;
+    letter-spacing: 0.2em; 
+    line-height: 1.59;
 }
 
-footer p {
+.contact-btn {
+    width: 450px;
+    height: 100px;
+    background-color: #595959;
+    border-radius: 15px;
+    color: white;
+    font-size: 32px;
+    letter-spacing: 0.2em;
+    line-height: 45px;
+    margin-bottom: 29px;
+}
+
+.contact-btn:hover {
+    background-color: #7c7c7c;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+}
+
+.contact-mail {
+    font-size: 25px;
+    letter-spacing: 0.2em;
+    line-height: 45px;
+}
+
+.contact-person {
+    font-size: 25px;
+    letter-spacing: 0.2em;
+    line-height: 45px;
+    margin-bottom: 128px;
+}
+
+footer {
+    background-image: url('img/footer_background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 198.33px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+}
+
+footer p {
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    line-height: 45px;
+    position: absolute;
+    bottom: 40px;
 }
 
 @media (max-width: 430px) {
