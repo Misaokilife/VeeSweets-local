@@ -11,6 +11,17 @@ html, *{
     color: #707070;
 }
 
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 50%;
+    bottom: 0;
+    width: 1px;
+    background: red; /* 赤色でよく目立つようにします */
+    z-index: 9999;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -20,39 +31,42 @@ img {
 
 header {
     position: relative;
-    height: 1080px;
+    height: auto;
     top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .site-icon{
-    width: 40%;
+    width: 730px;
     height: 113.38px;
     position: relative;
     margin-top: 63.26px;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;
 }
 
 .site-icon img {
     position: absolute;
-    width: 100%;
+    width: 730px;
     height: 100%;
-    top: 0;
     left: 50%;
     transform: translateX(-50%);
 }
 
+/* 以下のCSSは左から62.5px分左にずらすために追加 */
+.site-icon img {
+    transform: translateX(calc(-50% - 62.5px));/* 自身の幅の半分だけ左に移動後、62.5px右にズレる */
+}
+
+/* ＜main＞開始 */
+
 .main-visual {
+    position: relative;
     width: 100vw;
     max-width: 1500px;
     height: calc(100vw * (843 / 1500));
     max-height: 843px;
-    position: absolute;
-    top: 176.64px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10; /* 必要に応じてz-indexを指定 */
+    margin: 60px auto 110px;
 }
 
 .main-visual img {
@@ -60,8 +74,6 @@ header {
     height: auto;
     display: block;
 }
-
-/* ＜main＞開始 */
 
 .article {
     display: flex; 
@@ -281,32 +293,29 @@ footer p {
     }
 
     .site-icon {
-        width: 80%;
-        height: 50px;
-        margin-top: 20px;
-        margin-left: auto;
-        margin-right: auto;
         position: relative;
-        margin-bottom: 20px;
+        width: calc(35px * (125.07px / 113.38 px));
+        height: 35px;
+        margin: 20px auto;
     }
 
     .site-icon img {
-        width: 100%;
-        top: 0;
-        left: 0;
-        transform: none;
+        position: absolute;
+        width: auto;
+        height: 100%;
+        left: 50%;
+        transform: translateX(calc(-50% - 15px));
     }
 
     .main-visual {
         width: 100%;
         height: auto;
         position: relative;
-        top: 0;
-        left: 0;
         transform: none;
         max-width: none;
         max-height: none;
         overflow: hidden;
+        margin: 0;
     }
 
     .main-visual img {
@@ -321,15 +330,16 @@ footer p {
     .content-wrapper {
         max-width: 430px;
         width: 90%;
-        margin: 0 auto;
+        margin: 0 auto 20px;
         padding: 10px;
     }
 
     .content-wrapper h2 {
         font-size: 18px;
+        width: 100%;
         margin-bottom: 20px;
-        width: 98%;
-        margin-top: 10px;
+        margin-top: 20px;
+        letter-spacing: 0.1em;;
     }
 
     .content-wrapper h2 br {
@@ -361,6 +371,8 @@ footer p {
 
     .button-container {
         max-width: 250px;
+        width: 50%;
+        margin-bottom: 30px;
     }
 
     .narrow-btn {
@@ -370,6 +382,7 @@ footer p {
 
     .narrow-btn::before {
         width: 250px;
+        width: 90%;
     }
 
     .image-container {
@@ -385,26 +398,32 @@ footer p {
     }
 
     .contact-text {
-        font-size: 20px;
-        margin-bottom: 20px;
+        font-size: 18px;
+        margin: 20px;
         letter-spacing: unset;
+        text-align: center;
     }
 
     .contact-btn {
-        width: 300px;
-        height: 60px;
+        width: 60%;
+        height: 30%;
         font-size: 18px;
+        margin: 10px;
     }
 
     .contact-mail {
-        font-size: 18px;
+        font-size: 14px;
     }
 
     .contact-person {
-        font-size: 18px;
+        font-size: 14px;
+        margin-top: 5px;
         margin-bottom: 20px;
     }
 }
+    footer P {
+        font-size: 12px;
+    }
 
 @media (min-width: 431px) {
     br.responsive-break {
