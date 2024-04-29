@@ -89,8 +89,9 @@ header {
     font-size: 35px;
     letter-spacing: 0.2em;
     line-height: 1.45;
-    margin-left: auto;
+    margin: auto;
     margin-bottom: 53px;
+    text-align: center;
 }
 
 .caption-title2 {
@@ -223,7 +224,7 @@ header {
     width: 450px;
     height: 100px;
     background-color: #595959;
-    border-radius: 15px;
+    border-radius: 10px;
     color: white;
     font-size: 32px;
     letter-spacing: 0.2em;
@@ -448,3 +449,5 @@ footer p {
 .info-detail {
     margin-left: 60px;
 }
+
+/* 英語版 */
