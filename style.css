@@ -10,16 +10,7 @@ html, *{
     color: #707070;
 }
 
-body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 50%;
-    bottom: 0;
-    width: 1px;
-    background: red; /* 赤色でよく目立つようにします */
-    z-index: 9999;
-}
+
 
 img {
     max-width: 100%;
@@ -241,10 +232,12 @@ header {
     letter-spacing: 0.2em;
     line-height: 45px;
     margin-bottom: 29px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* 色と背景色の変化にアニメーションを追加 */
 }
 
 .contact-btn:hover {
     background-color: #7c7c7c;
+    color: #e0e0e0; /* ホバー時のテキスト色を薄灰色に変更 */
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transform: translateY(-2px);
 }
@@ -420,9 +413,6 @@ footer p {
         margin-bottom: 20px;
     }
 }
-    footer P {
-        font-size: 12px;
-    }
 
 @media (min-width: 431px) {
     br.responsive-break {
@@ -507,42 +497,45 @@ footer p {
     flex-direction: column;
 }
 
+/* 会社概要レスポンシブ */
 
 @media (max-width: 430px) {
-    .company-info {
-        display: flex;
-        text-align: Center;
-        letter-spacing: none;
+    .company-sections {
+        padding-left: 15px; /* 左の余白を適度に設定 */
+        padding-right: 15px; /* 右の余白を追加 */
     }
 
-    .info-category {
-        display: none; /* レスポンシブビューで非表示にする */
+    .company-section {
+        flex-direction: column; /* 縦並びに設定 */
+        align-items: flex-start; /* 左揃えに設定 */
+        font-size: 18px; /* フォントサイズを18pxに設定 */
+        line-height: 1.5em; /* 行間を少し広めに設定 */
+        margin-bottom: 30px; /* 各セクション間の余白を広げる */
     }
 
-    .info-detail {
-        flex: 1;
-        width: 100%; /* レスポンシブビューで全幅にする */
-        padding: 0 10px;
-        text-align: left;
-        align-self: flex-start; /* 左に寄せる */
+    .category {
+        flex-direction: column; /* カテゴリを縦並びに設定 */
+        align-items: flex-start; /* 左揃えに設定 */
+        margin-bottom: 15px; /* カテゴリ間の余白を設定 */
     }
 
-
-    .info-detail p:not(:last-child) {
-        margin-bottom: 10px; /* 行間を狭くする */
+    .category-title {
+        font-weight: bold; /* カテゴリタイトルを太字に */
+        margin-bottom: 8px; /* タイトルとコンテンツ間の余白を設定 */
     }
 
-    .info-detail .address2 {
-        margin-top: 20px; /* address1 と address2 の間に余白を設定 */
+    .category-content {
+        width: 100%; /* 幅を100%に設定 */
+        text-align: left; /* テキストを左揃えに */
+        margin-left: 0; /* 左の余白を0に設定 */
     }
 
-    .info-detail br {
-        display: none;
+    .location {
+        margin-bottom: 25px; /* 各ロケーション間の余白を設定 */
+        padding-top: 10px; /* 上のパディングを設定 */
     }
 
-    .company-name {
-        margin: 20px 0;
+    .location-info {
+        font-size: 16px; /* ロケーション情報のフォントサイズを少し小さく設定 */
     }
-
 }
-
