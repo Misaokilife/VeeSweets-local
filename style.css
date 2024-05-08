@@ -279,6 +279,8 @@ footer p {
 
 /* スマホ用レスポンシブ */
 
+/* ヘッダー */
+
 @media (max-width: 430px) {
     header {
         height: auto;
@@ -286,28 +288,29 @@ footer p {
 
     .site-icon {
         position: relative;
-        width: calc(35px * (125.07px / 113.38 px));
-        height: 35px;
-        margin: 20px auto;
+        width: calc(100% * (335.97 / 430));
+        height: 52.18px;
+        margin-top: 77px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .site-icon img {
         position: absolute;
-        width: auto;
-        height: 100%;
-        left: 50%;
-        transform: translateX(calc(-50% - 15px));
-    }
-
-    .main-visual {
         width: 100%;
         height: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+/* カルーセル */
+
+    .main-visual {
+        width: calc(100% * (336 / 430));
+        height: 189px;
         position: relative;
-        transform: none;
-        max-width: none;
-        max-height: none;
         overflow: hidden;
-        margin: 0;
+        margin: 44px auto 43px;
     }
 
     .main-visual img {
@@ -315,27 +318,25 @@ footer p {
         height: auto;
     }
 
+/* 本文 */
+
     .article {
         flex-direction: column;
     }
 
     .content-wrapper {
         max-width: 430px;
-        width: 90%;
-        margin: 0 auto 20px;
-        padding: 10px;
+        width: calc(100% * (336 / 430));
+        margin: 0 auto 44px;
     }
 
     .content-wrapper h2 {
-        font-size: 18px;
+        font-size: 26px;
         width: 100%;
-        margin-bottom: 20px;
-        margin-top: 20px;
-        letter-spacing: 0.1em;;
-    }
-
-    .content-wrapper h2 br {
-        display: none;
+        margin-top: 0;
+        margin-bottom: 44px;
+        line-height: 41px;
+        text-align: left;
     }
 
     .content-wrapper p {
@@ -345,6 +346,10 @@ footer p {
         max-width: 430px;
         width: 98%;
         letter-spacing: unset;
+    }
+
+    .responsive-break {
+        display: inline; /* ブレークポイント内で表示する */
     }
 
     .no-linebreak {
@@ -418,6 +423,11 @@ footer p {
     br.responsive-break {
         display: none;
     }
+
+    .responsive-break {
+        display: none; /* 幅が広い場合は表示しない */
+    }
+
 }
 
 /* Company Data page */
@@ -538,4 +548,17 @@ footer p {
     .location-info {
         font-size: 16px; /* ロケーション情報のフォントサイズを少し小さく設定 */
     }
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background-color: red; /* 線の色をお好みで変更 */
+    z-index: 9999; /* 線が他の要素の上に表示されるように */
+    transform: translateX(-50%);
+    pointer-events: none; /* クリックや選択を無効化 */
 }
