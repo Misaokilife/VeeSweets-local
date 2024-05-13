@@ -249,6 +249,7 @@ header {
     font-size: 25px;
     letter-spacing: 0.2em;
     line-height: 45px;
+    text-decoration: none;
 }
 
 .contact-person {
