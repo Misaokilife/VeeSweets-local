@@ -4,14 +4,11 @@ html, *{
     margin:0;
     padding:0;
     box-sizing: border-box;
-    line-height: 1.6;
     letter-spacing: 0.1em;
     font-family: "Noto Serif JP",  serif;
     font-weight: 300;
     color: #707070;
 }
-
-
 
 img {
     max-width: 100%;
@@ -262,25 +259,31 @@ header {
 }
 
 footer {
-    background-image: url('img/footer_background.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    position: relative;
     width: 100%;
     height: 198.33px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
+}
+
+.divider-footer {
+    max-width: 1920px;
+    width: 100%;
+    margin-bottom: 0;
+    height: 198.33px;
+}
+
+.divider-footer::after {
+    width: 210px;
+    height: 198.33px;
 }
 
 footer p {
+    position: absolute;
+    width: 100%;
     font-size: 14px;
     letter-spacing: 0.2em;
     line-height: 45px;
-    position: absolute;
-    bottom: 40px;
+    top: 121px;
+    text-align: center;
 }
 
 /* スマホ用レスポンシブ */
@@ -308,6 +311,7 @@ footer p {
         left: 50%;
         transform: translateX(-50%);
     }
+
 
 /* カルーセル */
 
@@ -509,9 +513,10 @@ footer p {
 
 /* フッター */
 
-    .footer {
-        display: none;
-    }
+footer {
+    width: 100%;
+    height: 75.63px;
+}
 
     .divider-footer{
         max-width: 430px;
@@ -521,6 +526,15 @@ footer p {
         width: 83px;
         height: 76px;
     }
+
+    footer p {
+        font-size: 8px;
+        line-height: 10px;
+        top: 42px;
+        bottom: 20px;
+    }
+
+
 }
 
 @media (min-width: 431px) {
@@ -536,8 +550,8 @@ footer p {
 
 /* Company Data page */
 
-.header-companydetail {
-    height: auto;
+.co-data-icon {
+    margin-top: 63px;
     margin-bottom: 119px;
 }
 
@@ -570,9 +584,7 @@ footer p {
     flex-direction: column;
     align-items: flex-start; /* 全て左揃えに設定 */
     margin-bottom: 20px;
-    font-family: "Noto Serif JP", serif;
     font-size: 25px; /* 25pxに変更 */
-    line-height: 0.2em; /* 行間を0.2emに変更 */
 }
 
 /* 横並びの二つの箱 */
@@ -614,55 +626,86 @@ footer p {
 /* 会社概要レスポンシブ */
 
 @media (max-width: 430px) {
+
+    .co-data-icon {
+        margin-top: 77px !important;
+        margin-bottom: 40px !important;
+    }
+
+    .company-data {
+        height: 37px;
+        margin-bottom: 33px;
+    }
+
+    .company-data h3 {
+        line-height: 37px;
+        font-size: 26px;
+        margin-bottom: 0;
+    }
+
     .company-sections {
-        padding-left: 15px; /* 左の余白を適度に設定 */
-        padding-right: 15px; /* 右の余白を追加 */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 430px;
+        min-height: 319px;
+        margin: 0;
+        padding-top: 25px;
+        padding-left: 47px;
+        padding-bottom: 264px;
+        padding-right:36px;
     }
 
     .company-section {
-        flex-direction: column; /* 縦並びに設定 */
+        flex-direction: column; /* カテゴリを縦並びに設定 */
         align-items: flex-start; /* 左揃えに設定 */
-        font-size: 18px; /* フォントサイズを18pxに設定 */
-        line-height: 1.5em; /* 行間を少し広めに設定 */
-        margin-bottom: 30px; /* 各セクション間の余白を広げる */
+        font-size: 14px; /* フォントサイズを18pxに設定 */
+        line-height: 23px; /* 行間を少し広めに設定 */
+        letter-spacing: 0.1em;
+        margin-bottom: 0;
     }
 
     .category {
-        flex-direction: column; /* カテゴリを縦並びに設定 */
         align-items: flex-start; /* 左揃えに設定 */
-        margin-bottom: 15px; /* カテゴリ間の余白を設定 */
+        margin-bottom: 0;
     }
 
     .category-title {
-        font-weight: bold; /* カテゴリタイトルを太字に */
-        margin-bottom: 8px; /* タイトルとコンテンツ間の余白を設定 */
+        padding: 0;
+        width: 60px;
+
+    }
+
+    .category-title-co {
+        margin-bottom: 8px;
     }
 
     .category-content {
-        width: 100%; /* 幅を100%に設定 */
         text-align: left; /* テキストを左揃えに */
         margin-left: 0; /* 左の余白を0に設定 */
     }
 
-    .location {
-        margin-bottom: 25px; /* 各ロケーション間の余白を設定 */
-        padding-top: 10px; /* 上のパディングを設定 */
+.category-locations {
+        margin-left: 12px;
     }
+
+    .location {
+        margin-bottom: 27px; /* 各ロケーション間の余白を設定 */
+        padding: 0;
+        padding-top: 22px;
+    }
+
+    .location-2 {
+        padding-top: 0;
+    }
+
+    .location-title2 {
+        letter-spacing: 0.07em;
+        }
 
     .location-info {
         font-size: 16px; /* ロケーション情報のフォントサイズを少し小さく設定 */
     }
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 50%;
-    width: 1px;
-    height: 100%;
-    background-color: red; /* 線の色をお好みで変更 */
-    z-index: 9999; /* 線が他の要素の上に表示されるように */
-    transform: translateX(-50%);
-    pointer-events: none; /* クリックや選択を無効化 */
-}
+
